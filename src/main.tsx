@@ -8,19 +8,33 @@ import {
 } from "react-router-dom";
 import Sobre from './Pages/Sobre.tsx'
 import Trabalhos from './Pages/Trabalhos.tsx'
+import Layout from './Components/Layout.tsx';
+
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App/>,
+    element: (
+      <Layout>
+        <App />
+      </Layout>
+    ),
   },
   {
     path: "/sobre",
-    element: <Sobre/>,
+    element: (
+      <Layout>
+        <Sobre />
+      </Layout>
+    ),
   },
   {
     path: "/trabalhos",
-    element: <Trabalhos/>,
+    element: (
+      <Layout>
+        <Trabalhos />
+      </Layout>
+    ),
   },
 ]);
 
