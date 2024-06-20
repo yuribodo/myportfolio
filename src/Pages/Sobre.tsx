@@ -1,6 +1,4 @@
-// Sobre.tsx
 
-import React from 'react';
 import { motion } from 'framer-motion';
 
 const serviceVariants = {

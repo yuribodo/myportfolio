@@ -1,5 +1,4 @@
 // App.tsx
-
 import { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Slider from 'react-slick';
@@ -17,10 +16,19 @@ function App() {
   const [servicosSectionRef, servicosInView] = useInView({ threshold: 0.1 });
   const [contatoSectionRef, contatoInView] = useInView({ threshold: 0.2 });
   const [slider, setSlider] = useState<Slider | null>(null);
+  const [cursorVisible, setCursorVisible] = useState(true);
 
 
   console.log(contatoRef)
   console.log(slider)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCursorVisible((prev) => !prev);
+    }, 500); // 500ms para o intervalo de piscar do cursor
+    
+    return () => clearInterval(interval);
+  }, []);
+
   const settings = {
     dots: true,
     infinite: true,
@@ -74,18 +82,18 @@ function App() {
   }, [contatoInView]);
 
   return (
-    <div className="flex flex-col items-center justify-center bg-gray-200 min-h-screen">
+    <div className="flex flex-col items-center justify-center bg-gray-100 min-h-screen">
       {/* Seção de Destaque */}
       <div ref={destaqueRef} className='flex items-center justify-center h-[100vh]'>
         <motion.div 
-          className="rounded-lg bg-gray-100 p-4 max-w-4xl w-full"
+          className="rounded-lg bg-white p-8 max-w-4xl w-full shadow-lg"
           initial={{ opacity: 0, y: 50 }}
           animate={destaqueInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
           transition={{ duration: 0.8 }}
         >
           <div className='p-4 text-center'> 
             <motion.h2 
-              className="text-2xl mt-10 font-thin flex items-center"
+              className="text-2xl mt-10 font-thin flex items-center text-gray-800"
               initial={{ opacity: 0, x: -50 }}
               animate={destaqueInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
               transition={{ delay: 1, duration: 0.5 }}
@@ -93,7 +101,7 @@ function App() {
               Mario, O Melhor Programador Freelancer
             </motion.h2>
             <motion.h1 
-              className="text-6xl font-bold mb-8 mt-10"
+              className="text-6xl font-bold mb-8 mt-10 text-gray-900"
               initial={{ opacity: 0 }}
               animate={destaqueInView ? { opacity: 1 } : { opacity: 0 }}
               transition={{ delay: 0.5, duration: 1 }}
@@ -101,7 +109,7 @@ function App() {
               Mario Development's
             </motion.h1>
             <motion.h2 
-              className="ml-5 text-3xl font-semibold font-serif flex items-center"
+              className="ml-5 text-3xl font-semibold font-serif flex items-center text-gray-800"
               initial={{ opacity: 0, x: -50 }}
               animate={destaqueInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
               transition={{ delay: 1, duration: 0.5 }}
@@ -109,7 +117,7 @@ function App() {
               Criando Websites <FontAwesomeIcon icon={faArrowDown} className="ml-2" />
             </motion.h2>
             <motion.h2 
-              className="ml-5 text-3xl font-semibold font-serif flex items-center"
+              className="ml-5 text-3xl font-semibold font-serif flex items-center text-gray-800 bg-yellow-300 w-[290px]"
               initial={{ opacity: 0, x: -50 }}
               animate={destaqueInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
               transition={{ delay: 1.5, duration: 0.5 }}
@@ -117,12 +125,13 @@ function App() {
               Impactantes e que 
             </motion.h2>
             <motion.h2 
-              className="ml-5 mb-4 text-3xl font-semibold font-serif flex items-center"
+              className="ml-5 mb-4 text-3xl font-semibold font-serif flex items-center text-gray-800 bg-yellow-300 w-[290px]"
               initial={{ opacity: 0, x: -50 }}
               animate={destaqueInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
               transition={{ delay: 2, duration: 0.5 }}
             >
               geram Resultados
+              {cursorVisible && <span className="cursor">|</span>}
             </motion.h2>
           </div>
         </motion.div>
@@ -131,13 +140,13 @@ function App() {
       {/* Seção de Nossos Serviços */}
       <motion.div 
         ref={servicosSectionRef}
-        className="bg-gray-300 py-20 w-full"
+        className="bg-gray-200 py-20 w-full"
         initial={{ opacity: 0, y: 50 }}
         animate={servicosInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
         transition={{ duration: 0.8 }}
       >
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-8 text-center">Nossos Serviços</h2>
+          <h2 className="text-4xl font-bold mb-8 text-center text-gray-900">Nossos Serviços</h2>
           <Slider {...settings} ref={(slider) => setSlider(slider)}>
             <div className="p-2">
               <motion.div 
@@ -148,7 +157,7 @@ function App() {
                 animate={servicosInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5 }}
               >
-                <h3 className="text-2xl font-semibold mb-4">Web Design</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-900">Web Design</h3>
                 <p className="text-gray-700">
                   Criamos designs modernos e responsivos para seu site, garantindo uma experiência de usuário excepcional.
                 </p>
@@ -168,7 +177,7 @@ function App() {
                 animate={servicosInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5 }}
               >
-                <h3 className="text-2xl font-semibold mb-4">Desenvolvimento Web</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-900">Desenvolvimento Web</h3>
                 <p className="text-gray-700">
                   Desenvolvemos websites customizados usando as tecnologias mais recentes para atender às suas necessidades específicas.
                 </p>
@@ -188,7 +197,7 @@ function App() {
                 animate={servicosInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5 }}
               >
-                <h3 className="text-2xl font-semibold mb-4">Hospedagem</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-900">Hospedagem</h3>
                 <p className="text-gray-700">
                   Oferecemos soluções de hospedagem confiáveis para manter seu site sempre disponível.
                 </p>
@@ -208,7 +217,7 @@ function App() {
                 animate={servicosInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5 }}
               >
-                <h3 className="text-2xl font-semibold mb-4">Suporte</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-900">Suporte</h3>
                 <p className="text-gray-700">
                   Estamos disponíveis para ajudar a resolver qualquer problema ou dúvida relacionada ao seu site.
                 </p>
@@ -233,7 +242,7 @@ function App() {
         transition={{ duration: 0.8 }}
       >
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-8 text-center">Nosso Portfolio</h2>
+          <h2 className="text-4xl font-bold mb-8 text-center text-gray-900">Nosso Portfolio</h2>
           {/* Aqui você pode adicionar o conteúdo do seu portfolio, como cards de projetos */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Exemplo de card de projeto */}
@@ -247,7 +256,7 @@ function App() {
             >
               <img src="/images/project1.jpg" alt="Projeto 1" className="w-full h-64 object-cover" />
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">Nome do Projeto</h3>
+                <h3 className="text-xl font-semibold mb-2 text-gray-900">Nome do Projeto</h3>
                 <p className="text-gray-700">
                   Breve descrição do projeto. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 </p>
@@ -265,7 +274,7 @@ function App() {
             >
               <img src="/images/project2.jpg" alt="Projeto 2" className="w-full h-64 object-cover" />
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">Outro Projeto</h3>
+                <h3 className="text-xl font-semibold mb-2 text-gray-900">Outro Projeto</h3>
                 <p className="text-gray-700">
                   Descrição do segundo projeto. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 </p>
@@ -282,7 +291,7 @@ function App() {
             >
               <img src="/images/project3.jpg" alt="Projeto 3" className="w-full h-64 object-cover" />
               <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2">Mais um Projeto</h3>
+                <h3 className="text-xl font-semibold mb-2 text-gray-900">Mais um Projeto</h3>
                 <p className="text-gray-700">
                   Descrição do terceiro projeto. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                 </p>
@@ -303,7 +312,7 @@ function App() {
         transition={{ duration: 0.8 }}
       >
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-8 text-center">Entre em Contato</h2>
+          <h2 className="text-4xl font-bold mb-8 text-center text-gray-900">Entre em Contato</h2>
           <Contato />
         </div>
       </motion.div>
@@ -315,7 +324,7 @@ function App() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.2 }}
       >
-        <p>&copy; 2024 Mario Development's. Todos os direitos reservados.</p>
+        <p className="text-gray-800">&copy; 2024 Mario Development's. Todos os direitos reservados.</p>
       </motion.footer>
     </div>
   );
