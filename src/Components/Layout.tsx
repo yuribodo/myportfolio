@@ -8,12 +8,15 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <>
-      <Logo />
-      <Navbar />
-      <main className=" px-4">{children}</main> {/* Adjust padding for content */}
-    </>
+    <div className="layout-wrapper">
+      <div className="layout">
+        <Logo />
+        <Navbar />
+        <main className="content">{children}</main>
+      </div>
+    </div>
   );
 }
 
 export default Layout;
+

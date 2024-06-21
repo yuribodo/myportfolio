@@ -1,23 +1,22 @@
-
 import { motion } from 'framer-motion';
 
 const serviceVariants = {
-    hidden: { opacity: 0, y: 50 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: 'easeInOut',
-      },
+  hidden: { opacity: 0, y: 50 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.5,
+      ease: 'easeInOut',
     },
-    hover: {
-      scale: 1.05,
-      transition: {
-        duration: 0.3,
-      },
+  },
+  hover: {
+    scale: 1.05,
+    transition: {
+      duration: 0.3,
     },
-  };
+  },
+};
 
 const Sobre = () => {
   return (
@@ -28,7 +27,7 @@ const Sobre = () => {
       variants={serviceVariants}
     >
       <motion.h1
-        className="text-4xl font-bold mb-2 text-center"
+        className="text-4xl font-bold mb-8 text-center"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
@@ -37,6 +36,7 @@ const Sobre = () => {
       </motion.h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Serviço 1: Web Design */}
         <motion.div
           className="bg-white p-6 rounded-lg shadow-lg overflow-hidden"
           variants={serviceVariants}
@@ -60,14 +60,9 @@ const Sobre = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
-              Criação de layouts atraentes e funcionais
+              Layouts atraentes e funcionais
             </motion.li>
             <motion.li
               className="flex items-center mb-2"
@@ -82,14 +77,9 @@ const Sobre = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
-              Integração com as últimas tendências de UX/UI
+              Integração com tendências UX/UI
             </motion.li>
             <motion.li
               className="flex items-center mb-2"
@@ -104,18 +94,14 @@ const Sobre = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
-              Otimização para diferentes dispositivos e navegadores
+              Otimização multi-dispositivo
             </motion.li>
           </motion.ul>
         </motion.div>
 
+        {/* Serviço 2: Desenvolvimento Web */}
         <motion.div
           className="bg-white p-6 rounded-lg shadow-lg overflow-hidden"
           variants={serviceVariants}
@@ -139,14 +125,9 @@ const Sobre = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
-              Desenvolvimento front-end e back-end
+              Front-end e back-end
             </motion.li>
             <motion.li
               className="flex items-center mb-2"
@@ -161,14 +142,9 @@ const Sobre = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
-              Integração de APIs e sistemas de terceiros
+              Integração de APIs e sistemas
             </motion.li>
             <motion.li
               className="flex items-center mb-2"
@@ -183,18 +159,14 @@ const Sobre = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
-              Implementação de soluções escaláveis e seguras
+              Soluções escaláveis e seguras
             </motion.li>
           </motion.ul>
         </motion.div>
 
+        {/* Serviço 3: Hospedagem */}
         <motion.div
           className="bg-white p-6 rounded-lg shadow-lg overflow-hidden"
           variants={serviceVariants}
@@ -218,12 +190,7 @@ const Sobre = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
               Hospedagem compartilhada e dedicada
             </motion.li>
@@ -240,12 +207,7 @@ const Sobre = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
               Gerenciamento de domínios e DNS
             </motion.li>
@@ -262,18 +224,14 @@ const Sobre = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
-              Monitoramento contínuo de performance e segurança
+              Monitoramento de performance e segurança
             </motion.li>
           </motion.ul>
         </motion.div>
 
+        {/* Serviço 4: Suporte */}
         <motion.div
           className="bg-white p-6 rounded-lg shadow-lg overflow-hidden"
           variants={serviceVariants}
@@ -297,14 +255,9 @@ const Sobre = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
-              Suporte técnico especializado e personalizado
+              Suporte técnico especializado
             </motion.li>
             <motion.li
               className="flex items-center mb-2"
@@ -319,14 +272,9 @@ const Sobre = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
-              Manutenção preventiva e correção de bugs
+              Manutenção e correção de bugs
             </motion.li>
             <motion.li
               className="flex items-center mb-2"
@@ -341,20 +289,15 @@ const Sobre = () => {
                 viewBox="0 0 24 24"
                 stroke="currentColor"
               >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M5 13l4 4L19 7"
-                />
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
               </svg>
-              Consultoria para otimização de desempenho
+              Consultoria para otimização
             </motion.li>
           </motion.ul>
         </motion.div>
       </div>
     </motion.div>
   );
-}
+};
 
 export default Sobre;
