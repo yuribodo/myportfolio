@@ -1,4 +1,3 @@
-// App.tsx
 import { useRef, useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import Slider from 'react-slick';
@@ -17,7 +16,6 @@ function App() {
   const [contatoSectionRef, contatoInView] = useInView({ threshold: 0.2 });
   const [slider, setSlider] = useState<Slider | null>(null);
   const [cursorVisible, setCursorVisible] = useState(true);
-
 
   console.log(contatoRef)
   console.log(slider)
@@ -197,15 +195,46 @@ function App() {
                 animate={servicosInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5 }}
               >
-                <h3 className="text-2xl font-semibold mb-4 text-gray-900">Hospedagem</h3>
+                <h3 className="text-2xl font-semibold mb-4 text-gray-900">Consultoria Técnica</h3>
                 <p className="text-gray-700">
-                  Oferecemos soluções de hospedagem confiáveis para manter seu site sempre disponível.
+                  Oferecemos consultoria especializada para ajudar você a tomar as melhores decisões tecnológicas para seu negócio.
                 </p>
                 <ul className="mt-4 text-gray-700">
-                  <li>Hospedagem compartilhada e dedicada</li>
-                  <li>Gerenciamento de domínios e DNS</li>
-                  <li>Monitoramento contínuo de performance e segurança</li>
+                  <li>Avaliação de necessidades e requisitos</li>
+                  <li>Recomendações de arquitetura e infraestrutura</li>
+                  <li>Suporte contínuo e treinamento</li>
                 </ul>
+              </motion.div>
+            </div>
+          </Slider>
+        </div>
+      </motion.div>
+
+      {/* Seção de Nosso Portfolio */}
+      <motion.div 
+        ref={portfolioRef}
+        className="bg-gray-200 py-20 w-full"
+        initial={{ opacity: 0, y: 50 }}
+        animate={portfolioInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className="max-w-4xl mx-auto px-4">
+          <h2 className="text-4xl font-bold mb-8 text-center text-gray-900">Nosso Portfolio</h2>
+          <Slider {...settings} ref={(slider) => setSlider(slider)}>
+            <div className="p-2">
+              <motion.div 
+                className="bg-white p-6 rounded-lg shadow-lg overflow-hidden"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={portfolioInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.5 }}
+              >
+                <img src="portfolio_image_1.jpg" alt="Portfolio Item 1" className="w-full h-48 object-cover mb-4 rounded-md" />
+                <h3 className="text-2xl font-semibold mb-4 text-gray-900">Projeto A</h3>
+                <p className="text-gray-700">
+                  Detalhes do projeto A, mostrando suas principais características e resultados.
+                </p>
               </motion.div>
             </div>
             <div className="p-2">
@@ -214,91 +243,33 @@ function App() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, scale: 0.9 }}
-                animate={servicosInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+                animate={portfolioInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5 }}
               >
-                <h3 className="text-2xl font-semibold mb-4 text-gray-900">Suporte</h3>
+                <img src="portfolio_image_2.jpg" alt="Portfolio Item 2" className="w-full h-48 object-cover mb-4 rounded-md" />
+                <h3 className="text-2xl font-semibold mb-4 text-gray-900">Projeto B</h3>
                 <p className="text-gray-700">
-                  Estamos disponíveis para ajudar a resolver qualquer problema ou dúvida relacionada ao seu site.
+                  Detalhes do projeto B, mostrando suas principais características e resultados.
                 </p>
-                <ul className="mt-4 text-gray-700">
-                  <li>Suporte técnico especializado e personalizado</li>
-                  <li>Manutenção preventiva e correção de bugs</li>
-                  <li>Consultoria para otimização de desempenho</li>
-                </ul>
               </motion.div>
             </div>
-            {/* Adicione mais cards de serviço conforme necessário */}
+            <div className="p-2">
+              <motion.div 
+                className="bg-white p-6 rounded-lg shadow-lg overflow-hidden"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={portfolioInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
+                transition={{ duration: 0.5 }}
+              >
+                <img src="portfolio_image_3.jpg" alt="Portfolio Item 3" className="w-full h-48 object-cover mb-4 rounded-md" />
+                <h3 className="text-2xl font-semibold mb-4 text-gray-900">Projeto C</h3>
+                <p className="text-gray-700">
+                  Detalhes do projeto C, mostrando suas principais características e resultados.
+                </p>
+              </motion.div>
+            </div>
           </Slider>
-        </div>
-      </motion.div>
-
-      {/* Seção de Portfolio */}
-      <motion.div 
-        ref={portfolioRef}
-        className="bg-gray-100 py-20 w-full"
-        initial={{ opacity: 0, y: 50 }}
-        animate={portfolioInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-        transition={{ duration: 0.8 }}
-      >
-        <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-8 text-center text-gray-900">Nosso Portfolio</h2>
-          {/* Aqui você pode adicionar o conteúdo do seu portfolio, como cards de projetos */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Exemplo de card de projeto */}
-            <motion.div 
-              className="bg-white rounded-lg shadow-lg overflow-hidden"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={portfolioInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.5 }}
-            >
-              <img src="/images/project1.jpg" alt="Projeto 1" className="w-full h-64 object-cover" />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-gray-900">Nome do Projeto</h3>
-                <p className="text-gray-700">
-                  Breve descrição do projeto. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-                <a href="#" className="block text-blue-500 mt-4">Ver mais</a>
-              </div>
-            </motion.div>
-            {/* Adicione mais cards de projeto conforme necessário */}
-            <motion.div 
-              className="bg-white rounded-lg shadow-lg overflow-hidden"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={portfolioInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.5 }}
-            >
-              <img src="/images/project2.jpg" alt="Projeto 2" className="w-full h-64 object-cover" />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-gray-900">Outro Projeto</h3>
-                <p className="text-gray-700">
-                  Descrição do segundo projeto. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-                <a href="#" className="block text-blue-500 mt-4">Ver mais</a>
-              </div>
-            </motion.div>
-            <motion.div 
-              className="bg-white rounded-lg shadow-lg overflow-hidden"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={portfolioInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
-              transition={{ duration: 0.5 }}
-            >
-              <img src="/images/project3.jpg" alt="Projeto 3" className="w-full h-64 object-cover" />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-gray-900">Mais um Projeto</h3>
-                <p className="text-gray-700">
-                  Descrição do terceiro projeto. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                </p>
-                <a href="#" className="block text-blue-500 mt-4">Ver mais</a>
-              </div>
-            </motion.div>
-          </div>
         </div>
       </motion.div>
 
@@ -326,6 +297,8 @@ function App() {
       >
         <p className="text-gray-800">&copy; 2024 Mario Development's. Todos os direitos reservados.</p>
       </motion.footer>
+
+
     </div>
   );
 }
