@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Contato from "./Components/Contato";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
+import { faArrowDown, faPaintBrush, faCode, faCogs } from '@fortawesome/free-solid-svg-icons';
 import { useInView } from 'react-intersection-observer';
 
 function App() {
@@ -17,13 +17,10 @@ function App() {
   const [slider, setSlider] = useState<Slider | null>(null);
   const [cursorVisible, setCursorVisible] = useState(true);
 
-  console.log(contatoRef)
-  console.log(slider)
   useEffect(() => {
     const interval = setInterval(() => {
       setCursorVisible((prev) => !prev);
-    }, 500); // 500ms para o intervalo de piscar do cursor
-    
+    }, 500);
     return () => clearInterval(interval);
   }, []);
 
@@ -148,62 +145,50 @@ function App() {
           <Slider {...settings} ref={(slider) => setSlider(slider)}>
             <div className="p-2">
               <motion.div 
-                className="bg-white p-6 rounded-lg shadow-lg overflow-hidden"
+                className="bg-white p-6 rounded-lg shadow-lg overflow-hidden text-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={servicosInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5 }}
               >
-                <h3 className="text-2xl font-semibold mb-4 text-gray-900">Web Design</h3>
+                <FontAwesomeIcon icon={faPaintBrush} className="text-5xl text-yellow-500 mb-4" />
+                <h3 className="text-2xl font-semibold mb-2 text-gray-900">Web Design</h3>
                 <p className="text-gray-700">
-                  Criamos designs modernos e responsivos para seu site, garantindo uma experiência de usuário excepcional.
+                  Designs modernos e responsivos para seu site.
                 </p>
-                <ul className="mt-4 text-gray-700">
-                  <li>Criação de layouts atraentes e funcionais</li>
-                  <li>Integração com as últimas tendências de UX/UI</li>
-                  <li>Otimização para diferentes dispositivos e navegadores</li>
-                </ul>
               </motion.div>
             </div>
             <div className="p-2">
               <motion.div 
-                className="bg-white p-6 rounded-lg shadow-lg overflow-hidden"
+                className="bg-white p-6 rounded-lg shadow-lg overflow-hidden text-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={servicosInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5 }}
               >
-                <h3 className="text-2xl font-semibold mb-4 text-gray-900">Desenvolvimento Web</h3>
+                <FontAwesomeIcon icon={faCode} className="text-5xl text-blue-500 mb-4" />
+                <h3 className="text-2xl font-semibold mb-2 text-gray-900">Desenvolvimento Web</h3>
                 <p className="text-gray-700">
-                  Desenvolvemos websites customizados usando as tecnologias mais recentes para atender às suas necessidades específicas.
+                  Websites customizados com as tecnologias mais recentes.
                 </p>
-                <ul className="mt-4 text-gray-700">
-                  <li>Desenvolvimento front-end e back-end</li>
-                  <li>Integração de APIs e sistemas de terceiros</li>
-                  <li>Implementação de soluções escaláveis e seguras</li>
-                </ul>
               </motion.div>
             </div>
             <div className="p-2">
               <motion.div 
-                className="bg-white p-6 rounded-lg shadow-lg overflow-hidden"
+                className="bg-white p-6 rounded-lg shadow-lg overflow-hidden text-center"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={servicosInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.5 }}
               >
-                <h3 className="text-2xl font-semibold mb-4 text-gray-900">Consultoria Técnica</h3>
+                <FontAwesomeIcon icon={faCogs} className="text-5xl text-green-500 mb-4" />
+                <h3 className="text-2xl font-semibold mb-2 text-gray-900">Consultoria Técnica</h3>
                 <p className="text-gray-700">
-                  Oferecemos consultoria especializada para ajudar você a tomar as melhores decisões tecnológicas para seu negócio.
+                  Consultoria especializada para decisões tecnológicas.
                 </p>
-                <ul className="mt-4 text-gray-700">
-                  <li>Avaliação de necessidades e requisitos</li>
-                  <li>Recomendações de arquitetura e infraestrutura</li>
-                  <li>Suporte contínuo e treinamento</li>
-                </ul>
               </motion.div>
             </div>
           </Slider>
@@ -297,8 +282,6 @@ function App() {
       >
         <p className="text-gray-800">&copy; 2024 Mario Development's. Todos os direitos reservados.</p>
       </motion.footer>
-
-
     </div>
   );
 }
