@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import image1 from '../assets/projeto1.jpg'
 
 const cardVariants = {
   hidden: { opacity: 0, scale: 0.8 },
@@ -22,9 +23,9 @@ const cardVariants = {
 const Trabalhos = () => {
   const projetos = [
     {
-      nome: 'Projeto de Website Corporativo',
-      descricao: 'Desenvolvimento completo de um website para uma empresa de tecnologia.',
-      imagem: '/images/projeto1.jpg',
+      nome: 'Desenvolvimento de uma Newsletter',
+      descricao: 'Desenvolvimento completo de um website para envio de mensagens por email.',
+      imagem: image1,
     },
     {
       nome: 'Redesign de Website Institucional',
@@ -70,13 +71,7 @@ const Trabalhos = () => {
             <div className="p-6">
               <motion.h3 className="text-xl font-bold mb-2">{projeto.nome}</motion.h3>
               <motion.p className="text-base mb-4">{projeto.descricao}</motion.p>
-              <motion.button
-                className="bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline transition duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Ver Detalhes
-              </motion.button>
+              
             </div>
           </motion.div>
         ))}
