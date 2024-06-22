@@ -78,64 +78,64 @@ function App() {
   return (
     <div className="flex flex-col items-center justify-center bg-gray-100 min-h-screen">
       {/* Seção de Destaque */}
-      <div ref={destaqueRef} className='flex items-center justify-center md:min-h-[calc(100vh - 64px)] h-screen px-4 sm:px-6 lg:px-8'>
-  <motion.div 
-    className="rounded-lg bg-white p-4 md:p-8 max-w-screen-xl w-full shadow-lg" // Aumentei max-w-screen-xl para aumentar a largura e torná-la mais retangular
-    initial={{ opacity: 0, y: 50 }}
-    animate={destaqueInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-    transition={{ duration: 0.8 }}
-  >
-    <div className='text-center'> 
-      <motion.h2 
-        className="text-lg md:text-2xl mt-6 md:mt-10 font-thin flex items-center justify-center text-gray-800"
-        initial={{ opacity: 0, x: -50 }}
-        animate={destaqueInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-        transition={{ delay: 1, duration: 0.5 }}
-      >
-        Mario, O Melhor Programador Freelancer
-      </motion.h2>
-      <motion.h1 
-        className="text-xl md:text-4xl font-bold mb-4 md:mb-8 mt-4 md:mt-10 text-gray-900"
-        initial={{ opacity: 0 }}
-        animate={destaqueInView ? { opacity: 1 } : { opacity: 0 }}
-        transition={{ delay: 0.5, duration: 1 }}
-      >
-        Mario Development's
-      </motion.h1>
-      <motion.h2 
-        className="text-base md:text-lg font-semibold font-serif flex items-center justify-start text-gray-800 mt-4 md:mt-6 ml-4 md:ml-0"
-        initial={{ opacity: 0 }}
-        animate={destaqueInView ? { opacity: 1 } : { opacity: 0 }}
-        transition={{ delay: 0.5, duration: 1 }}
-      >
-        Criando Websites <FontAwesomeIcon icon={faArrowDown} className="ml-1 md:ml-2" />
-      </motion.h2>
-      <div className='bg-yellow-300 max-w-max p-2 md:p-4 mt-2 sm:ml-0'>
-  <motion.h2 
-    className="text-base md:text-lg font-semibold italic font-serif flex items-center justify-center text-gray-800 relative"
-    initial={{ opacity: 0, x: -50 }}
-    animate={destaqueInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-    transition={{ delay: 1, duration: 0.5 }}
-  >
-    Impactantes e que
-  </motion.h2>
-  <div className="relative">
-    <motion.h2 
-      className="text-base md:text-lg font-semibold italic font-serif flex items-center justify-center text-gray-800"
-      initial={{ opacity: 0, x: -50 }}
-      animate={destaqueInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-      transition={{ delay: 1, duration: 0.5 }}
-    >
-      Geram Resultados 
-    </motion.h2>
-    {cursorVisible && (
-      <span className="absolute top-0 right-0 mt-0 ml-1 md:ml-2 cursor">|</span>
-    )}
-  </div>
-</div>
-    </div>
-  </motion.div>
-</div>
+      <div id="destaque" ref={destaqueRef} className='flex items-center justify-center md:min-h-[calc(100vh - 64px)] h-screen px-4 sm:px-6 lg:px-8'>
+          <motion.div 
+            className="rounded-lg bg-white p-4 md:p-8 max-w-screen-xl w-full shadow-lg" // Aumentei max-w-screen-xl para aumentar a largura e torná-la mais retangular
+            initial={{ opacity: 0, y: 50 }}
+            animate={destaqueInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
+            transition={{ duration: 0.8 }}
+          >
+            <div className='text-center'> 
+              <motion.h2 
+                className="text-lg md:text-2xl mt-6 md:mt-10 font-thin flex items-center justify-center text-gray-800"
+                initial={{ opacity: 0, x: -50 }}
+                animate={destaqueInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+                transition={{ delay: 1, duration: 0.5 }}
+              >
+                Mario, O Melhor Programador Freelancer
+              </motion.h2>
+              <motion.h1 
+                className="text-xl md:text-4xl font-bold mb-4 md:mb-8 mt-4 md:mt-10 text-gray-900"
+                initial={{ opacity: 0 }}
+                animate={destaqueInView ? { opacity: 1 } : { opacity: 0 }}
+                transition={{ delay: 0.5, duration: 1 }}
+              >
+                Mario Development's
+              </motion.h1>
+              <motion.h2 
+                className="text-base md:text-lg font-semibold font-serif flex items-center justify-start text-gray-800 mt-4 md:mt-6 ml-4 md:ml-0"
+                initial={{ opacity: 0 }}
+                animate={destaqueInView ? { opacity: 1 } : { opacity: 0 }}
+                transition={{ delay: 0.5, duration: 1 }}
+              >
+                Criando Websites <FontAwesomeIcon icon={faArrowDown} className="ml-1 md:ml-2" />
+              </motion.h2>
+              <div className='bg-yellow-300 max-w-max p-2 md:p-4 mt-2 sm:ml-0'>
+          <motion.h2 
+            className="text-base md:text-lg font-semibold italic font-serif flex items-center justify-center text-gray-800 relative"
+            initial={{ opacity: 0, x: -50 }}
+            animate={destaqueInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+            transition={{ delay: 1, duration: 0.5 }}
+          >
+            Impactantes e que
+          </motion.h2>
+          <div className="relative">
+            <motion.h2 
+              className="text-base md:text-lg font-semibold italic font-serif flex items-center justify-center text-gray-800"
+              initial={{ opacity: 0, x: -50 }}
+              animate={destaqueInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+              transition={{ delay: 1, duration: 0.5 }}
+            >
+              Geram Resultados 
+            </motion.h2>
+            {cursorVisible && (
+              <span className="absolute top-0 right-0 mt-0 ml-1 md:ml-2 cursor">|</span>
+            )}
+          </div>
+        </div>
+            </div>
+          </motion.div>
+        </div>
 
 
 

@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom'; // Importe useNavigate
 
 const Navbar = () => {
-  const navigate = useNavigate();
+  const navigate = useNavigate(); // Use useNavigate para navegação
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleContatoClick = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
@@ -12,6 +13,14 @@ const Navbar = () => {
     setTimeout(() => {
       const contatoSection = document.querySelector('#contato');
       contatoSection?.scrollIntoView({ behavior: 'smooth' });
+    }, 100);
+  };
+
+  const handleHomeClick = () => {
+    navigate('/');
+    setTimeout(() => {
+      const destaqueSection = document.querySelector('#destaque'); // Substitua com o ID correto da seção de destaque
+      destaqueSection?.scrollIntoView({ behavior: 'smooth' });
     }, 100);
   };
 
@@ -40,7 +49,7 @@ const Navbar = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.3 }}
       >
-        <Link to="/" className="text-gray-700 font-semibold hover:text-blue-500 text-sm md:text-base">Home</Link>
+        <Link to="/" onClick={handleHomeClick} className="text-gray-700 font-semibold hover:text-blue-500 text-sm md:text-base">Home</Link>
         <Link to="/sobre" className="text-gray-700 font-semibold hover:text-blue-500 text-sm md:text-base">Sobre</Link>
         <Link to="/trabalhos" className="text-gray-700 font-semibold hover:text-blue-500 text-sm md:text-base">Trabalhos</Link>
         <a href="/contato" onClick={handleContatoClick} className="text-gray-700 font-semibold hover:text-blue-500 text-sm md:text-base">Contato</a>
@@ -53,7 +62,7 @@ const Navbar = () => {
         animate={{ opacity: menuOpen ? 1 : 0, y: menuOpen ? 0 : -20 }}
         transition={{ duration: 0.3 }}
       >
-        <Link to="/" className="text-gray-700 font-semibold hover:text-blue-500  text-lg md:text-base mb-2">Home</Link>
+        <Link to="/" onClick={handleHomeClick} className="text-gray-700 font-semibold hover:text-blue-500  text-lg md:text-base mb-2">Home</Link>
         <Link to="/sobre" className="text-gray-700 font-semibold hover:text-blue-500 text-lg md:text-base mb-2">Sobre</Link>
         <Link to="/trabalhos" className="text-gray-700 font-semibold hover:text-blue-500 text-lg md:text-base mb-2">Trabalhos</Link>
         <a href="/contato" onClick={handleContatoClick} className="text-gray-700 font-semibold hover:text-blue-500 text-lg md:text-base">Contato</a>
