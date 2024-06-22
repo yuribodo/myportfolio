@@ -1,5 +1,7 @@
 import { motion } from 'framer-motion';
 import image1 from '../assets/projeto1.jpg'
+import image2 from '../assets/projeto2.jpg'
+import image3 from '../assets/projeto3.jpg'
 
 const cardVariants = {
   hidden: { opacity: 0, scale: 0.8 },
@@ -28,14 +30,14 @@ const Trabalhos = () => {
       imagem: image1,
     },
     {
-      nome: 'Redesign de Website Institucional',
-      descricao: 'Reformulação visual e estratégica de um website institucional para melhorar a usabilidade.',
-      imagem: '/images/projeto2.jpg',
+      nome: 'Desenvolvimento de Site para Restaurante',
+      descricao: 'Desenvolvimento de site para Restaurante que mostra o Menu para os Cliente e da o contato do estabelecimento par comprarem',
+      imagem: image2,
     },
     {
-      nome: 'Website Responsivo para E-commerce',
-      descricao: 'Criação de um website otimizado para dispositivos móveis para uma loja virtual.',
-      imagem: '/images/projeto3.jpg',
+      nome: 'Desenvolvimento de Site para Academia',
+      descricao: 'Criação de um website otimizado para apresentar a academia para os clientes interrados, explicando seus planos e preços.',
+      imagem: image3,
     },
   ];
 
