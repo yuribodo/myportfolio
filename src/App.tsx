@@ -10,6 +10,7 @@ import { useInView } from 'react-intersection-observer';
 import image1 from './assets/projeto1.jpg'
 import image2 from './assets/projeto2.jpg'
 import image3 from './assets/projeto3.jpg'
+import { Helmet } from 'react-helmet-async';
 
 function App() {
   
@@ -80,6 +81,11 @@ function App() {
 
   return (
     <div className="flex flex-col items-center justify-center bg-gray-100 min-h-screen">
+      <Helmet>
+        <title>Mario Yuri Dev</title>
+        <meta name="description" content="Bem-vindo ao site oficial de Marioyuri, web designer e desenvolvedor web freelancer. Conheça nossos serviços e portfólio." />
+        <meta name="keywords" content="Marioyuri, web designer, programador, desenvolvedor web, freelancer, marioyuri, mario yuri" />
+      </Helmet>
       {/* Seção de Destaque */}
       <div id="destaque" ref={destaqueRef} className='flex items-center justify-center md:min-h-[calc(100vh - 64px)] h-screen px-4 sm:px-6 lg:px-8'>
           <motion.div 
