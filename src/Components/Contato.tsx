@@ -13,7 +13,7 @@ const Contato = () => {
         <FontAwesomeIcon icon={faInstagram} size="2x" />
       </a>
       {/* WhatsApp */}
-      <a href="https://api.whatsapp.com/send?phone=+556992695729" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-800">
+      <a href="https://api.whatsapp.com/send?phone=556992695729" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-800">
         <FontAwesomeIcon icon={faWhatsapp} size="2x" />
       </a>
       {/* Email */}
