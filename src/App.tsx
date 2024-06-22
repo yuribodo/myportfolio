@@ -149,7 +149,7 @@ function App() {
         transition={{ duration: 0.8 }}
       >
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-8 text-center text-gray-900">Nossos Serviços</h2>
+          <h2 className="text-4xl font-bold mb-8 text-center text-gray-900">Serviços</h2>
           <Slider {...settings} ref={(slider) => setSlider(slider)}>
             <div className="p-2">
               <motion.div 
@@ -212,7 +212,7 @@ function App() {
         transition={{ duration: 0.8 }}
       >
         <div className="max-w-4xl mx-auto px-4">
-          <h2 className="text-4xl font-bold mb-8 text-center text-gray-900">Nosso Portfolio</h2>
+          <h2 className="text-4xl font-bold mb-8 text-center text-gray-900">Portfolio</h2>
           <Slider {...settings} ref={(slider) => setSlider(slider)}>
             {projetos.map((projeto, index) => (
               <div className="p-2" key={index}>
