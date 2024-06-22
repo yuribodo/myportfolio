@@ -51,7 +51,7 @@ const Trabalhos = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Nossos Projetos de Website
+        rojetos de Website
       </motion.h1>
 
       <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

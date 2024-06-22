@@ -32,7 +32,7 @@ const Sobre = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.5 }}
       >
-        Sobre Nós
+        Sobre
       </motion.h1>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
