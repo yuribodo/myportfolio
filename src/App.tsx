@@ -109,7 +109,7 @@ function App() {
                 animate={destaqueInView ? { opacity: 1 } : { opacity: 0 }}
                 transition={{ delay: 0.5, duration: 1 }}
               >
-                Mario Development's
+                Mario Yuri Development's
               </motion.h1>
               <motion.h2 
                 className="text-base md:text-lg font-semibold font-serif flex items-center justify-start text-gray-800 mt-4 md:mt-6 ml-4 md:ml-0"
