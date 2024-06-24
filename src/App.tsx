@@ -84,7 +84,7 @@ function App() {
       <Helmet>
         <title>Mario Yuri Dev</title>
         <meta name="description" content="Bem-vindo ao site oficial de Marioyuri, web designer e desenvolvedor web freelancer. Conheça nossos serviços e portfólio." />
-        <meta name="keywords" content="Marioyuri, web designer, programador, desenvolvedor web, freelancer, marioyuri, mario yuri" />
+        <link rel="canonical" href="/" />
       </Helmet>
       {/* Seção de Destaque */}
       <div id="destaque" ref={destaqueRef} className='flex items-center justify-center md:min-h-[calc(100vh - 64px)] h-screen px-4 sm:px-6 lg:px-8'>
@@ -101,7 +101,7 @@ function App() {
                 animate={destaqueInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
                 transition={{ delay: 1, duration: 0.5 }}
               >
-                Mario, O Melhor Programador Freelancer
+                Mario Yuri, O Melhor Programador Freelancer
               </motion.h2>
               <motion.h1 
                 className="text-xl md:text-4xl font-bold mb-4 md:mb-8 mt-4 md:mt-10 text-gray-900"
